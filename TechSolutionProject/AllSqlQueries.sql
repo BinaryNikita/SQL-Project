@@ -55,3 +55,7 @@ select first_name, last_name, hire_date from Employees order by hire_date  desc;
 
 Query: Retrieve the top 3 highest-paid employees.
 select first_name, last_name, salary  from Employees order by salary  desc limit 3;
+
+Query: Update Bob’s job title to "HR Manager" and increase his salary to 60,000.
+select employee_id from Employees where first_name = 'Bob' and last_name = 'Brown';
+update Employees set job_title = 'HR Manager', salary = 60000 where employee_id = 2;
