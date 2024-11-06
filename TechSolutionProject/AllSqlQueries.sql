@@ -64,3 +64,7 @@ Query: Delete the record for "Global Solutions" from the Clients table.
 select client_id from Clients where client_name = 'global solutions';
 delete from Clients where client_id = 2;
 
+Query: Suppose you need to delete only the oldest project.
+delete from Projects order by start_date asc limit 1;
+
+
