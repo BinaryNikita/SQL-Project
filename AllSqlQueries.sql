@@ -7,3 +7,11 @@ create table Departments ( department_id int primary key auto_increment, departm
 
 alter table Employees add column department_id int;
 alter table Employees add constraint department_id foreign key(department_id) references Departments(department_id);
+
+create table Projects(
+project_id int primary key auto_increment, 
+project_name varchar(100) not null,  
+start_date date, end_date date, 
+budget decimal(10, 2), 
+department_id int,
+ foreign key (department_id) references Departments(department_id));
