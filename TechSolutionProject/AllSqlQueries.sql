@@ -42,3 +42,13 @@ values
 
 Query: Retrieve all columns and rows from the Employees table.
 select * from Employees;
+
+Query: Retrieve only the first name, last name, and job title of each employee.
+select  first_name, last_name, job_title from Employees;
+
+Query: Find employees in the "Engineering" department.
+select department_id where department_name = 'Engineering';
+select * from Employees where department_id = 1;
+
+Query: Retrieve employees and sort them by hire_date in descending order.
+select first_name, last_name, hire_date from Employees order by hire_date  desc;
