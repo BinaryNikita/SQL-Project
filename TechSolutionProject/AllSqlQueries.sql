@@ -27,3 +27,9 @@ department_id int,
  update Departments set manager_id = 2 where department_id = 2;
  update Departments set manager_id = 3 where department_id = 3;
  update Departments set manager_id = 4 where department_id = 4;
+
+insert into Projects (project_name, start_date, end_date, budget, department_id)
+values
+    ('Website Redesign', '2023-01-01', '2023-06-30', 20000, 1),
+    ('Employee Onboarding', '2023-02-01', '2023-05-01', 10000, 2),
+    ('Social Media Campaign', '2023-04-01', '2023-08-01', 15000, 3);
