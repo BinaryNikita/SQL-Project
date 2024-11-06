@@ -67,4 +67,6 @@ delete from Clients where client_id = 2;
 Query: Suppose you need to delete only the oldest project.
 delete from Projects order by start_date asc limit 1;
 
-
+INNER JOIN 
+Scenario: Get a list of all employees and the departments they belong to.
+select Employees.first_name, Employees.last_name, Departments.department_name from Employees inner join Departments on Employees.department_id = Departments.department_id;
