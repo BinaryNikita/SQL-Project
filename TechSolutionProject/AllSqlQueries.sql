@@ -59,3 +59,8 @@ select first_name, last_name, salary  from Employees order by salary  desc limit
 Query: Update Bob’s job title to "HR Manager" and increase his salary to 60,000.
 select employee_id from Employees where first_name = 'Bob' and last_name = 'Brown';
 update Employees set job_title = 'HR Manager', salary = 60000 where employee_id = 2;
+
+Query: Delete the record for "Global Solutions" from the Clients table.
+select client_id from Clients where client_name = 'global solutions';
+delete from Clients where client_id = 2;
+
