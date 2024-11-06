@@ -51,4 +51,7 @@ select department_id where department_name = 'Engineering';
 select * from Employees where department_id = 1;
 
 Query: Retrieve employees and sort them by hire_date in descending order.
-select first_name, last_name, hire_date from Employees order by hire_date  desc
+select first_name, last_name, hire_date from Employees order by hire_date  desc;
+
+Query: Retrieve the top 3 highest-paid employees.
+select first_name, last_name, salary  from Employees order by salary  desc limit 3;
