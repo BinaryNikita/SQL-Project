@@ -15,3 +15,6 @@ start_date date, end_date date,
 budget decimal(10, 2), 
 department_id int,
  foreign key (department_id) references Departments(department_id));
+
+ create table Clients( client_id int primary key auto_increment, client_name varchar(100)
+ not null, contact_person varchar(100),  phone_number varchar(15), email varchar(100) unique);
