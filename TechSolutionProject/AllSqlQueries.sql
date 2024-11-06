@@ -38,3 +38,7 @@ insert into Clients (client_name, contact_person, phone_number, email)
 values
  ('Acme Corp', 'John Doe', '555-9876', 'johndoe@acmecorp.com'),
  ('Global Solutions', 'Jane Roe', '555-5432', 'janeroe@globalsolutions.com');
+
+
+Query: Retrieve all columns and rows from the Employees table.
+select * from Employees;
