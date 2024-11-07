@@ -70,3 +70,14 @@ delete from Projects order by start_date asc limit 1;
 INNER JOIN 
 Scenario: Get a list of all employees and the departments they belong to.
 select Employees.first_name, Employees.last_name, Departments.department_name from Employees inner join Departments on Employees.department_id = Departments.department_id;
+
+LEFT JOIN 
+Scenario: List all departments and any associated projects, including departments with no projects.
+select Departments.department_name, Projects.project_name from Departments left join Projects  on Projects.department_id =
+Departments.department_id;
+
+RIGHT JOIN
+Scenario: Get a list of projects and any associated department, including projects without a department.
+select Projects.project_name, Departments.department_name from Projects inner join Departments on  Departments.department_i
+d = Projects.department_id;
+
