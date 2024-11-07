@@ -81,3 +81,9 @@ Scenario: Get a list of projects and any associated department, including projec
 select Projects.project_name, Departments.department_name from Projects inner join Departments on  Departments.department_i
 d = Projects.department_id;
 
+Aggregate Functions
+
+Scenario: Count the total number of employees in the company.
+select count(*) as Total_Employee from Employees;
+
+Scenario: Calculate the total salary paid to all employees.
