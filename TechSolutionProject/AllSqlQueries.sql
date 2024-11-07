@@ -87,3 +87,4 @@ Scenario: Count the total number of employees in the company.
 select count(*) as Total_Employee from Employees;
 
 Scenario: Calculate the total salary paid to all employees.
+select sum(salary) as Total_Salary from Employees;
