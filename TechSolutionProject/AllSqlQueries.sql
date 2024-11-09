@@ -94,3 +94,6 @@ select avg(salary) as Average_Salary from Employees;
 
 Scenario: Get the Employee with second highest salary.
 select first_name, last_name, salary from Employees where salary = (select max(salary) from Employees where salary < (select max(salary) from Employees));
+
+Scenario: Identify the highest and lowest project budgets.
+select min(budget) as Minimum_budget, max(budget) as Maxmium_budget from Projects;
