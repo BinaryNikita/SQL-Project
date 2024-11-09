@@ -107,5 +107,6 @@ select first_name, last_name, salary  from employees where salary > (select avg(
 Scenario: Find employees who work in the same department as "John Doe".
 select first_name, last_name, department_id from employees where department_id = (select department_id from employees where first_name = 'Amit');
 
-
+Scenario: Get the average salary of employees in each department.
+select department_id, avg(salary) as average_Salary from (select department_id, salary from employees)  as subquery group by department_id ;
 
