@@ -104,3 +104,8 @@ select department_id, count(*) as same_department from employees group by depart
 Scenario: Find employees who earn more than the average salary.
 select first_name, last_name, salary  from employees where salary > (select avg(salary) from employees);
 
+Scenario: Find employees who work in the same department as "John Doe".
+select first_name, last_name, department_id from employees where department_id = (select department_id from employees where first_name = 'Amit');
+
+
+
