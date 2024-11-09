@@ -88,3 +88,9 @@ select count(*) as Total_Employee from Employees;
 
 Scenario: Calculate the total salary paid to all employees.
 select sum(salary) as Total_Salary from Employees;
+
+Scenario: Find the average salary of employees.
+select avg(salary) as Average_Salary from Employees;
+
+Scenario: Get the Employee with second highest salary.
+select first_name, last_name, salary from Employees where salary = (select max(salary) from Employees where salary < (select max(salary) from Employees));
