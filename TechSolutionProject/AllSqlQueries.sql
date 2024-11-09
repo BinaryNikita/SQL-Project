@@ -100,3 +100,7 @@ select min(budget) as Minimum_budget, max(budget) as Maxmium_budget from Project
 
 Scenario: Count employees with the same department
 select department_id, count(*) as same_department from employees group by department_id;
+
+Scenario: Find employees who earn more than the average salary.
+select first_name, last_name, salary  from employees where salary > (select avg(salary) from employees);
+
