@@ -97,3 +97,6 @@ select first_name, last_name, salary from Employees where salary = (select max(s
 
 Scenario: Identify the highest and lowest project budgets.
 select min(budget) as Minimum_budget, max(budget) as Maxmium_budget from Projects;
+
+Scenario: Count employees with the same department
+select department_id, count(*) as same_department from employees group by department_id;
