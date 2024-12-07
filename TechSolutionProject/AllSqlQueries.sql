@@ -147,3 +147,9 @@ join
     departments d 
 on 
     e.department_id = d.department_id;
+
+Query :find the employees whose names start with the letter A
+ select * from employees where first_name like 'a%';
+
+Query :find the employees whose names end with the letter A
+select * from employees where first_name like '%a';
