@@ -233,3 +233,6 @@ select date_format(hire_date, '%Y-%m') as year_month from employees;
 
 Query: get the employee whose first name length is 6
 select * from employees where length(first_name) = 6;
+
+Query: ascii value of first character
+select first_name, ascii(first_name) as ascii_value from employees;
