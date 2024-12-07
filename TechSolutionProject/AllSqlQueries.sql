@@ -153,3 +153,83 @@ Query :find the employees whose names start with the letter A
 
 Query :find the employees whose names end with the letter A
 select * from employees where first_name like '%a';
+
+Query: retrieves all columns (*) from the employees table for rows where the first_name:
+
+Starts with the letter a, and
+Ends with the letter a, with any number (including zero) of characters in between.
+
+select * from employees where first_name like 'a%a';
+
+Query: average salary for all employees grouped by their departments
+select 
+    d.department_name, 
+    avg(e.salary) as average_salary
+from 
+    employees e
+join 
+    departments d 
+on 
+    e.department_id = d.department_id
+group by 
+    d.department_name;
+
+Query: find employees who joined in the year 2020
+select 
+    * 
+from 
+    employees 
+where 
+    year(hire_date) = 2020;
+Query: employee with the maximum salary in each department
+select 
+    e.employee_id, 
+    e.first_name, 
+    e.last_name, 
+    d.department_name, 
+    e.salary
+from 
+    employees e
+join 
+    departments d 
+on 
+    e.department_id = d.department_id
+where 
+    e.salary = (
+        select 
+            max(salary)
+        from 
+            employees
+        where 
+            department_id = e.department_id
+    );
+
+Query: find the length of first name and second name
+
+select 
+    first_name, 
+    last_name, 
+    length(first_name) as first_name_length, 
+    length(last_name) as last_name_length
+from 
+    employees;
+Query: Trim space and convert employee names to upper case
+select 
+    first_name, 
+    last_name, 
+    upper(trim(first_name)) as cleaned_first_name, 
+    upper(trim(last_name)) as cleaned_last_name
+from 
+    employees;
+Query:  Full Date Format (Day, Month, Year)
+select date_format(hire_date, '%W, %M %d, %Y') as formatted_date from employees;
+
+select date_format(hire_date, '%d-%m-%Y') as formatted_date from employees;
+
+American format
+select date_format(hire_date, '%m/%d/%Y') as formatted_date from employees;
+year and month only
+select date_format(hire_date, '%Y-%m') as year_month from employees;
+
+Query: get the employee whose first name length is 6
+select * from employees where length(first_name) = 6;
