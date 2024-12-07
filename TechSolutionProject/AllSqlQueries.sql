@@ -132,4 +132,18 @@ The generated enrollment number should be: 36NiHu2024.
 
  select e.employee_id, concat(e.employee_id,substring(e.first_name, 1),substring(d.department_name, 1, 2),year(e.hire_date)
     ) as enrollment_number from employees e join departments d  on e.department_id = d.department_id;
-
+//
+select 
+    e.employee_id,
+    concat(
+        e.employee_id, 
+        substring(e.first_name, 1, 2), 
+        substring(d.department_name, 1, 2), 
+        year(e.hire_date)
+    ) as enrollment_number
+from 
+    employees e
+join 
+    departments d 
+on 
+    e.department_id = d.department_id;
