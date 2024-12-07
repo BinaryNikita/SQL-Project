@@ -110,3 +110,26 @@ select first_name, last_name, department_id from employees where department_id =
 Scenario: Get the average salary of employees in each department.
 select department_id, avg(salary) as average_Salary from (select department_id, salary from employees)  as subquery group by department_id ;
 
+Scenario: Write a SQL query to generate an enrollment number for each employee by concatenating the following:
+
+The employee's employee_id.
+The first two letters of the employee's first_name.
+The first two letters of the employee's department name (from the Departments table).
+The year part of the employee's hire_date.
+The result should include two columns:
+
+employee_id
+enrollment_number
+The Employees table and Departments table are related by department_id.
+
+For example, given the data:
+
+Employee ID: 36
+First Name: Nikita
+Department Name: Human Resources
+Hire Date: 2024-11-23
+The generated enrollment number should be: 36NiHu2024.
+
+ select e.employee_id, concat(e.employee_id,substring(e.first_name, 1),substring(d.department_name, 1, 2),year(e.hire_date)
+    ) as enrollment_number from employees e join departments d  on e.department_id = d.department_id;
+
